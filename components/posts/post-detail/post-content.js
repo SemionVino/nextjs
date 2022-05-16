@@ -1,5 +1,6 @@
 import classes from "./post-content.module.css";
 import PostHeader from "./post-header";
+import ReactMarkdown from 'react-markdown'
 const DUMMY_POST = {
   slug: "getting-started",
   title: "Getting Started",
@@ -8,12 +9,12 @@ const DUMMY_POST = {
   content: "# This is a first post",
 };
 export default function PostContent() {
-  console.log('asda',DUMMY_POST);
   const imagePath = `/images/posts/${DUMMY_POST.slug}/${DUMMY_POST.image}`;
   return (
     <article className={classes.content}>
       <PostHeader title={DUMMY_POST.title} image={imagePath} />
-      {DUMMY_POST.content}
+      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
+      
     </article>
   );
 }

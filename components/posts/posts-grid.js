@@ -2,7 +2,7 @@ import classes from "./posts-grid.module.css";
 import PostItem from "./post-item";
 export default function PostsGrid(props) {
   const { posts } = props;
-  console.log("dfd", PostItem);
+  console.log("dfd", props);
   return (
     <ul className={classes.grid}>
       {posts.map((post) => (
